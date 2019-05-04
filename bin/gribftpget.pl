@@ -3,7 +3,7 @@
 ### ARCHIVE-ADDED gribftpget to get archive file from nomads server (gets entire file, not subdomain)
 #
 # 11 July 2015 Added fix for end of ftpprd, as per
-# http://www.drjack.info/cgi-bin/WEBBBS/rasp-forum_config.pl/read/5991#5991
+# https://www.drjack.info/cgi-bin/WEBBBS/rasp-forum_config.pl/read/5991#5991
 # Thanks to Alan Crouse
 
 ### USED FOR PARALLEL-DOWNLOAD 
@@ -208,7 +208,7 @@ sub jchomp(@)
       elsif ( $gribftpsite eq "gsdftp.fsl.noaa.gov" )
       { $ID='ftp apassword'; }
       ### ARCHIVE-ADDED
-      elsif ( substr( $gribftpsite, 0, 7 ) eq 'http://' )
+      elsif ( substr( $gribftpsite, 0, 7 ) eq 'https://' )
       { $ID=''; }
       else
       {
@@ -254,7 +254,7 @@ sub jchomp(@)
       elsif ( $LSFTPMETHOD eq "CURL" )
       {
         #ARCHIVE-ADDED
-        if ( substr( $gribftpsite, 0, 7 ) eq 'http://' )
+        if ( substr( $gribftpsite, 0, 7 ) eq 'https://' )
         {
          `curl -v -s -f -o "${GRIBDIR}/${filename}" "${gribftpsite}/${FTPDIRECTORY}/${filename}" > $TMPFILE1 2>$TMPFILE2`;
           #4test: print "curl -v -s -o ${GRIBDIR}/${filename} ${gribftpsite}/${FTPDIRECTORY}/${filename} > $TMPFILE1 2>$TMPFILE2 \n";

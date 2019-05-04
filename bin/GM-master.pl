@@ -124,12 +124,12 @@
 ###    subs requires subroutines to be predeclared
 ### To provide aliases for buit-in punctuation variables (p403)
       use English;
-####### FOR GRIB ARCHIVE RUN   GFS(1x1deg-180hrmax)/ETA(~11Mb-12km-60hrmax)/RUC(20km-12hrmax) archives at http://nomads.ncdc.noaa.gov/data.php
+####### FOR GRIB ARCHIVE RUN   GFS(1x1deg-180hrmax)/ETA(~11Mb-12km-60hrmax)/RUC(20km-12hrmax) archives at https://nomads.ncdc.noaa.gov/data.php
 ###     BUT ARCHIVE RUC CANNOT INIT (missing cloud/rain/ice/snow/graupel/soil/etc parameters)
 ###         with RUCH Vtable failed at wrfprep: hinterp log has zero length & with RUCP Vtable failed at wrfprep: hinterp log says "no valid landmask found!", no soil height interpolation, etc. and later fails
 ### download grib files for necessary date and times
-###    e.g. "wget http://nomads.ncdc.noaa.gov/data/gfs-avn-hi/200602/20060219/gfs_3_20060219_1200_012.grb"
-###    e.g. "wget http://nomads.ncdc.noaa.gov/data/meso-eta-hi/200602/20060219/nam_218_20060219_1200_012.grb"
+###    e.g. "wget https://nomads.ncdc.noaa.gov/data/gfs-avn-hi/200602/20060219/gfs_3_20060219_1200_012.grb"
+###    e.g. "wget https://nomads.ncdc.noaa.gov/data/meso-eta-hi/200602/20060219/nam_218_20060219_1200_012.grb"
 ### create links in GRIB directory to expected file names for all necessary times
 ###    e.g. "ln -s gfs_3_20060219_1200_012.grb gfs.t12z.pgrb2f12"
 ###    e.g. "ln -s nam_218_20060219_1200_012.grb nam.t12z.awip3d12.tm00"
