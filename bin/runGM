@@ -26,7 +26,7 @@ fi
 #################################################################################
 
 ### SET FLAG TO SEND EMAIL IF STDERR NOT EMPTY
-LSENDSTDERREMAIL=1
+LSENDSTDERREMAIL=0
 
 ########################################
 
