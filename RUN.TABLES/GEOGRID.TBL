@@ -8,20 +8,18 @@ name = HGT_M
 	df_dy=SPLY
         smooth_option = smth-desmth_special; smooth_passes=1
         fill_missing=0.
-        interp_option =     SRTMUK:average_gcell(4.0)+four_pt+average_4pt
         interp_option = gmted2010_30s:average_gcell(4.0)+four_pt+average_4pt
         interp_option =     gtopo_30s:average_gcell(4.0)+four_pt+average_4pt
         interp_option =      gtopo_2m:four_pt
         interp_option =      gtopo_5m:four_pt
         interp_option =     gtopo_10m:four_pt
         interp_option =       default:average_gcell(4.0)+four_pt+average_4pt
-        rel_path      =     SRTMUK:topo_SRTMUK/
-#       rel_path      = gmted2010_30s:topo_gmted2010_30s/
+        rel_path      =   gmted2010_30s:topo_gmted2010_30s/
         rel_path      =     gtopo_30s:topo_30s/
         rel_path      =      gtopo_2m:topo_2m/
         rel_path      =      gtopo_5m:topo_5m/
         rel_path      =     topo_10m:topo_10m/
-#       rel_path      =       default:topo_gmted2010_30s/
+       rel_path      =       default:topo_gmted2010_30s/
 ===============================
 name=LANDUSEF
         priority=1
