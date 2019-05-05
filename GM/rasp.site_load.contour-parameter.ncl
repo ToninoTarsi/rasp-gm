@@ -8,17 +8,6 @@
   ;;example=autoset_colors:  delete( opts_bparam@ContourParameters )
 ;;example:  end if
 
-;;;; PAULS ;;;;
-
-
-; If plotting takes a LOOONGG time, try this
-if( isvar("Region")) then
-  if( Region .eq. "UK2+1" .or. Region .eq. "UK2" ) then
-    opts_plot@cnFillMode = "MeshFill"
-  else
-    opts_plot@cnFillMode = "AreaFill"
-  end if
-end if
 
 if( plot_param .eq. "rain1" ) then
   opts_bparam@ContourParameters = (/ 0.1, 4.9, 0.1 /)
@@ -26,11 +15,11 @@ if( plot_param .eq. "rain1" ) then
 end if
 
 if( plot_param .eq. "wstar_bsratio" ) then
-  opts_bparam@ContourParameters = (/ 175., 575., 25. /)
+  opts_bparam@ContourParameters = (/ 0., 400., 20. /)
 end if
 
 if( plot_param .eq. "wstar" ) then
-  opts_bparam@ContourParameters = (/ 175., 575., 25. /)
+  opts_bparam@ContourParameters = (/ 0., 400., 20. /)
 end if
 
 ; if(plot_param .eq. "wblmaxmin") then
