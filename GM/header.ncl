@@ -2,13 +2,22 @@ procedure doHeader(param, title, Region, gridspacingkm, FMT, tail)
 begin
 
 	initmodel = getenv("ENV_NCL_INITMODE");
+	initmodel = getenv("ENV_NCL_INITMODE");
+	BASEDIR = getenv("BASEDIR");
 
-	;;; CREATE EXPANSIVE 3rd TITLE LINE FROM GRID INFO
-	; if(param .eq. "wstar_bsratio" .or. param .eq. "bsratio_bsratio") then
-	; 	titleline3 = "B/S Ratio Stipple: 0 to 3 => Dense; 3 to 6 => Sparse; >6 => None"
-	; else
-		titleline3 = "DrJack BLIPMAP from RASP "+gridspacingkm+"km "+initmodel+"-initiated WRF-ARW V3.9.1.1 model"
-	; end if
+
+	wrf_version_file = BASEDIR + "/bin/WRF_VERSION.txt"
+	wrf_version = ""
+	if ( fileexists(wrf_version_file) ) then 
+		wrf_version = readAsciiHead(wrf_version_file,1)
+	end if 
+
+;;; CREATE EXPANSIVE 3rd TITLE LINE FROM GRID INFO
+; if(param .eq. "wstar_bsratio" .or. param .eq. "bsratio_bsratio") then
+; 	titleline3 = "B/S Ratio Stipple: 0 to 3 => Dense; 3 to 6 => Sparse; >6 => None"
+; else
+	titleline3 = "DrJack BLIPMAP from RASP "+gridspacingkm+"km "+initmodel+"-initiated WRF-ARW " + wrf_version + " model"
+; end if
 
 	print("    *  " + title)
 	print("    *  " + getenv("ENV_NCL_ID"))
