@@ -26,7 +26,7 @@ qcloud   = wrf_user_getvar(f, "QCLOUD", time)   ; NB: sometimes also "rh"!!		52
 qvapor   = wrf_user_getvar(f, "QVAPOR", time)   ; water vapor mixing ratio in kg/kg	51
 cldfra   = wrf_user_getvar(f, "CLDFRA", time)   ; cloud fraction (0-1)			114
 swdown   = wrf_user_getvar(f, "SWDOWN", time)   ; Only == bparam !!			115
-rqcblten = wrf_user_getvar(f, "RQCBLTEN", time) ; for d(QC)/dt				133
+;rqcblten = wrf_user_getvar(f, "RQCBLTEN", time) ; for d(QC)/dt				133
 pblh     = wrf_user_getvar(f, "PBLH", time)     ; bl depth (metres)			141
 hfx      = wrf_user_getvar(f, "HFX", time)      ; for sfc. sensible heat flux in w/m2	142
 rh       = wrf_user_getvar(f, "rh", time)       ; relative humidity in percent		QVAPOR (51); P (26); PB (27); T (15); 
