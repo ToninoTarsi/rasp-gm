@@ -1,4 +1,4 @@
- &time_control
+&time_control
  run_days                            = 0,
  run_hours                           = 12,
  run_minutes                         = 0,
@@ -28,9 +28,9 @@
  io_form_boundary                    = 2
  debug_level                         = 0
  adjust_output_times                 = .true.
- /
+/
 
- &domains
+&domains
  use_adaptive_time_step              = .true.
  step_to_output_time                 = .true.
  target_cfl                          = 1.2, 1.2, 1.2
@@ -76,7 +76,7 @@
                                        0.025, 0.000
 /
 
- &physics
+&physics
  mp_physics                          = 5,     5,     5,
  ra_lw_physics                       = 1,     1,     1,
  ra_sw_physics                       = 1,     1,     1,
@@ -97,12 +97,12 @@
 
 &noah_mp
  opt_sfc                             = 1,
- /
+/
 
- &fdda
- /
+&fdda
+/
 
- &dynamics
+&dynamics
  w_damping                           = 0,
  diff_opt                            = 1,
  km_opt                              = 4,
@@ -117,7 +117,7 @@
  non_hydrostatic                     = .true., .true., .true.,
  moist_adv_opt                       = 1,      1,      1,     
  scalar_adv_opt                      = 1,      1,      1,     
- /
+/
 
  &bdy_control
  spec_bdy_width                      = 5,
@@ -133,4 +133,4 @@
  &namelist_quilt
  nio_tasks_per_group = 0,
  nio_groups = 1,
- /
+/
