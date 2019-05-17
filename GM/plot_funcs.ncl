@@ -744,11 +744,11 @@ begin
 	opt_shd = True	                       ; Options for Stipple Shading
 	opt_shd@gsnShadeFillType = "Pattern"
 	opt_shd@gsnShadeLow      = 17	       ; Stipple
-	opt_shd@gsnShadeHigh     = 17	       ; Stipple
+	;opt_shd@gsnShadeHigh     = 17	       ; Stipple
  	opt_shd@gsnDraw          = False       ; Don't Draw it yet
 	opt_shd@Frame            = False       ; Don't "Advance Frame"
 
-	stipple1 = gsn_contour_shade(stipple, 3.0, 3.0, opt_shd)    ; Shade it
+	stipple1 = gsn_contour_shade(stipple, 6.0, 6.0, opt_shd)    ; Shade it
 	overlay(contour, stipple1)                                  ; Add stipple to contour
 
 	draw(contour)
