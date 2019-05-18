@@ -696,8 +696,8 @@ begin
 	; WARNING: params here are in feet & Knots
 	; hglider, ter, blavgwind & cu_pot need conversion
 
-	hglider = 3.28084 * hglider_mag ; Convert to feet
-	cupot  = 3.28084 * cu_pot      ; Convert to feet
+	hglider = hglider_mag ; meters
+	cupot  =   cu_pot      ; meters
 	if(HGflag) then
 		wind_local = 2.2369363 * wind	; Convert to mph(!?)
 	else
@@ -706,24 +706,24 @@ begin
 
 	; Start with hglider
 	stars = hglider
-	stars = where(hglider .gt. 4000.0, 5000, stars)
-	stars = where(hglider .le. 4000.0, 4000, stars)
-	stars = where(hglider .le. 3500.0, 3000, stars)
-	stars = where(hglider .le. 3000.0, 2000, stars)
-	stars = where(hglider .le. 2500.0, 1000, stars)
-	stars = where(hglider .lt. 1500.0, 0000, stars)
+	stars = where(hglider .gt. 2400.0, 5000, stars)
+	stars = where(hglider .le. 2200.0, 4000, stars)
+	stars = where(hglider .le. 2000.0, 3000, stars)
+	stars = where(hglider .le. 1800.0, 2000, stars)
+	stars = where(hglider .le. 1500.0, 1000, stars)
+	stars = where(hglider .lt. 1000, 0000, stars)
 	; print("stars(hglider): Min = " + min(stars) + " Max = " + max(stars) )
 
 	; If it's the same as the Terrain, rating must be 0
-	stars = where(stars .eq. ter * 3.28084, 0, stars)
+	;stars = where(stars .eq. ter , 0, stars)
 	; print("stars(ter): Min = " + min(stars) + " Max = " + max(stars) )
 
 	; Apply modification for "small puffy clouds"
 	; Criterion is small(ish) clouds if 500 < cu_pot < 5000
 	; If cu_pot < 0 => blue
 	; print("stars - cupot: Min = " + min(cupot) + " Max = " + max(cupot) )
-	stars = where(cupot .gt. 500.0 .and. cupot.lt.5000.0, stars + 500.0, stars)
-	stars = where(cupot .lt. 0.0                        , stars - 500.0, stars)
+	stars = where(cupot .gt. 150.0 .and. cupot.lt.1500.0, stars + 150.0, stars)
+	stars = where(cupot .lt. 0.0                        , stars - 150.0, stars)
 	; print("stars(cu_pot): Min = " + min(stars) + " Max = " + max(stars) )
 
 	; Wind Reduction and bsratio adjustment
