@@ -14,6 +14,8 @@ fi
 
 # Comment out if you want ".curr+N." for REGIONXYZ+N
 export CURR_ONLY=1
+export GETVAR=NCL
+export GMIMAGESIZE=800
 
 # Check for Graphics Magick (gm) / convert
 export CONVERT="gm convert"
