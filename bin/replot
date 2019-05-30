@@ -14,7 +14,7 @@ fi
 
 # Comment out if you want ".curr+N." for REGIONXYZ+N
 export CURR_ONLY=1
-export GETVAR=NCL
+#export GETVAR=NCL   # Tonino Tarsi 2019 . Soundings not working with this
 export GMIMAGESIZE=800
 
 # Check for Graphics Magick (gm) / convert
