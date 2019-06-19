@@ -3631,9 +3631,9 @@ sub do_getgrib_selection ()
              }
              elsif ( $gribftpsite eq 'https://nomads.ncep.noaa.gov' && $GRIBFILE_MODEL eq 'GFSN' || $gribftpsite eq 'https://nomads.ncep.noaa.gov' && $GRIBFILE_MODEL eq 'GFSA' ||  $gribftpsite eq 'https://nomads.ncep.noaa.gov' && $GRIBFILE_MODEL eq 'AVN' )
              {
-               $gribftpdirectory[1] = sprintf 'gfs.%04d%02d%02d%02d',$jyr4,$jmo2,$jda2,$fileanaltimes{$ifile};
-               $gribftpdirectory[0] = sprintf 'gfs.%04d%02d%02d%02d',$jyr4m1,$jmo2m1,$jda2m1,$fileanaltimes{$ifile};
-               $gribftpdirectory[2] = sprintf 'gfs.%04d%02d%02d%02d',$jyr4p1,$jmo2p1,$jda2p1,$fileanaltimes{$ifile};
+               $gribftpdirectory[1] = sprintf 'gfs.%04d%02d%02d/%02d',$jyr4,$jmo2,$jda2,$fileanaltimes{$ifile};
+               $gribftpdirectory[0] = sprintf 'gfs.%04d%02d%02d/%02d',$jyr4m1,$jmo2m1,$jda2m1,$fileanaltimes{$ifile};
+               $gribftpdirectory[2] = sprintf 'gfs.%04d%02d%02d/%02d',$jyr4p1,$jmo2p1,$jda2p1,$fileanaltimes{$ifile};
              }
              $filenamedirectory = $gribftpdirectory[$filenamedirectoryno{$ifile}];
              $filename{$ifile} = $file;
