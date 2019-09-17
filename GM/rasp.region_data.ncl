@@ -4,6 +4,8 @@ metric
 metric
 ===CUCCO2B
 metric
+===CUCCOLR
+metric
 sounding1
 5LS048 L CUCCO SUD
 43.34445
