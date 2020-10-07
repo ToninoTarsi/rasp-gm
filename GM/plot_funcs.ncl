@@ -2177,6 +2177,7 @@ begin
 			wind1_mag = new ( (/ny, nx/), float)
 			sfcwind(uEW, vNS, u1, v1, wind1_mag )
 
+			ldatafmt = 2
 			copy_VarAtts(mag, wind1_mag)
 			copy_VarAtts(mag, u1)
 			copy_VarAtts(mag, v1)
@@ -2235,6 +2236,7 @@ begin
 			windt_mag = new ( (/ny, nx/), float)
 			bltopwind(uEW, vNS, z, ter, pblh, nx, ny, nz, ut, vt, windt_mag )
 
+			ldatafmt = 2
 			copy_VarAtts(mag, windt_mag)
 			copy_VarAtts(mag, ut)
 			copy_VarAtts(mag, vt)
@@ -2262,6 +2264,7 @@ begin
 			blavgwind = new ( (/ny, nx/), float)	; in kt!!!
 			blwind(z, ter, pblh, nx, ny, nz, uEW, vNS, blavgwind, u, v)
 
+			ldatafmt = 2
 			copy_VarAtts(mag, blavgwind)
 			copy_VarAtts(mag, u)
 			copy_VarAtts(mag, v)
